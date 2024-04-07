@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Success</title>
+</head>
+<body>
+<p>The customer is confirmed: <span th:text="${customer.firstName +' ' +customer.lastName}"/></p>
+<p>Age: <span th:text="${customer.age}"/></p>
+<p>Postal code: <span th:text="${customer.postalCode}"/></p>
+<p>Country code: <span th:text="${customer.countryCode}"/></p>
+</body>
+</html>

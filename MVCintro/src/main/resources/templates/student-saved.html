@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Saved</title>
+</head>
+<body>
+  <p>Student is registered: <span th:text="${student.firstName}+' '+${student.lastName}"/>
+      from <span th:text="${student.country}"/>
+        and has a <span th:text="${student.pet}"/>
+  </p>
+</body>
+</html>
