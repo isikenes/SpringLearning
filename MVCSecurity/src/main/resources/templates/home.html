@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <h2>Homepage</h2>
+    <hr>
+    <p>User: <span sec:authentication="principal.username"></span></p>
+    <br>
+    <p>Role(s): <span sec:authentication="principal.authorities"></span></p>
+    <hr>
+
+    <div sec:authorize="hasRole('president')">
+        <a th:href="@{/list}">Class List</a> <span> Only for president</span>
+        <br>
+    </div>
+
+    <div sec:authorize="hasRole('admin')">
+        <a th:href="@{/system}">System</a> <span> Only for admin</span>
+        <br>
+    </div>
+
+    <form action="#" th:action="@{/logout}" method="POST">
+        <button type="submit" class="btn btn-danger">Logout</button>
+    </form>
+</div>
+</body>
+</html>
